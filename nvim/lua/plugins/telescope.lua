@@ -3,7 +3,16 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  opts = {},
+  opts = {
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-M-j>"] = "move_selection_next",
+          ["<C-M-k>"] = "move_selection_previous",
+        },
+      },
+    },
+  },
   keys = {
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
     { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
