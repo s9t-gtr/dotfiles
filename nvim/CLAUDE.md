@@ -31,3 +31,9 @@ return {
   opts = {},
 }
 ```
+
+## Plugin Documentation
+
+`nvim/README.md` にプラグイン一覧を管理している。プラグインの追加・削除・設定変更を行った場合は、必ず `nvim/README.md` のテーブルも同じ形式で更新すること。
+
+テーブルの列: `Plugin`（リンク付き）, `File`, `Description`, `Key Bindings`
