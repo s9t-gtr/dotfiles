@@ -10,6 +10,10 @@ ln -sf "$DOTFILES_DIR/nvim" ~/.config/nvim
 # tmux
 ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" ~/.tmux.conf
 
+# ghostty
+mkdir -p ~/.config/ghostty
+ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
+
 # tpm (tmux plugin manager)
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
