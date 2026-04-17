@@ -33,6 +33,6 @@ return {
       },
     })
 
-    vim.lsp.enable({ "clangd", "lua_ls", "intelephense" })
+    vim.lsp.enable({ "clangd", "lua_ls", "intelephense", "gopls" })
   end,
 }
