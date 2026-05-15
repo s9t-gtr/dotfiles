@@ -1,0 +1,4 @@
+screen-256color-strike|screen with 256 colors and strikethrough,
+  smxx=\E[9m,
+  rmxx=\E[29m,
+  use=screen-256color,
