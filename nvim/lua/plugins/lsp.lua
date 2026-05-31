@@ -34,5 +34,18 @@ return {
     })
 
     vim.lsp.enable({ "clangd", "lua_ls", "intelephense", "gopls" })
+
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = "●",
+        source = "if_many",
+        spacing = 2,
+      },
+      severity_sort = true,
+      float = {
+        border = "rounded",
+        source = "if_many",
+      },
+    })
   end,
 }
