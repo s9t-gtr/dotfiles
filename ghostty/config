@@ -4,3 +4,4 @@ window-inherit-working-directory = true
 theme = Gruber Darker
 font-size = 16
 font-family = "HackGen Console NF"
+cursor-opacity = 0.7
