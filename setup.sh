@@ -13,6 +13,7 @@ ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" ~/.tmux.conf
 # ghostty
 mkdir -p ~/.config/ghostty
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
+"$DOTFILES_DIR/ghostty/pick-random-bg.sh"
 
 # lazygit
 mkdir -p ~/Library/Application\ Support/lazygit

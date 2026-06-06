@@ -6,3 +6,5 @@ font-size = 16
 font-family = "HackGen Console NF"
 cursor-opacity = 0.7
 macos-option-as-alt = true
+
+config-file = ?~/.config/ghostty/background.conf
