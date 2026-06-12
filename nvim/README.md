@@ -12,3 +12,4 @@
 | [sidekick.nvim](https://github.com/folke/sidekick.nvim) | `sidekick.lua` | シンボルアウトラインのサイドパネル | — |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | `lsp.lua` | LSP設定（定義ジャンプ・参照一覧・リネーム等） | `gd` 定義, `gr` 参照, `<leader>ds` シンボル, `<leader>ca` コードアクション, `<leader>rn` リネーム, `K` ホバー |
 | [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | `smear-cursor.lua` | カーソル移動のスムーズアニメーション（smoothプリセット） | — |
+| [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) | `zen-mode.lua` | 集中モード（中央寄せ・余計なUI非表示） | `<leader>z` トグル, `:ZenMode` |
