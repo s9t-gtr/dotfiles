@@ -21,4 +21,6 @@ background-image-position = center
 background-image-fit = cover
 background-image-opacity = 0.1
 EOF
+  echo "ghostty background -> $(basename "$chosen")"
+  echo "Reload with cmd+shift+, or open a new ghostty window."
 fi
