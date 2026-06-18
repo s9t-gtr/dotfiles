@@ -26,3 +26,11 @@
 - **依存関係**: `nvim-treesitter/nvim-treesitter`, `nvim-tree/nvim-web-devicons`
 - **インストール日**: 2026-01-25
 - **URL**: https://github.com/MeanderingProgrammer/render-markdown.nvim
+
+### kevinhwang91/nvim-ufo
+**目的**: 高機能なコード折りたたみ（LSP foldingRange を優先し、treesitter/indent でフォールバック）
+- **関連ファイル**: `lua/plugins/ufo.lua`
+- **依存関係**: `kevinhwang91/promise-async`
+- **補足**: `lua/plugins/lsp.lua` で全LSPクライアントに `foldingRange` capability を付与している
+- **インストール日**: 2026-06-18
+- **URL**: https://github.com/kevinhwang91/nvim-ufo

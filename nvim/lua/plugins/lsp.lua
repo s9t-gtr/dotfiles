@@ -21,6 +21,18 @@ return {
     })
   end,
   config = function()
+    -- nvim-ufo が LSP の foldingRange を利用できるよう、全クライアントに capability を付与
+    vim.lsp.config("*", {
+      capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          },
+        },
+      },
+    })
+
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
