@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = { "saghen/blink.cmp" },
   init = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
@@ -21,17 +22,16 @@ return {
     })
   end,
   config = function()
-    -- nvim-ufo が LSP の foldingRange を利用できるよう、全クライアントに capability を付与
-    vim.lsp.config("*", {
-      capabilities = {
-        textDocument = {
-          foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-          },
+    -- blink.cmp の補完 capability に nvim-ufo 用の foldingRange をマージして全クライアントへ付与
+    local capabilities = require("blink.cmp").get_lsp_capabilities({
+      textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true,
         },
       },
     })
+    vim.lsp.config("*", { capabilities = capabilities })
 
     vim.lsp.config("lua_ls", {
       settings = {

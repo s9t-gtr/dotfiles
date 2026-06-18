@@ -14,3 +14,4 @@
 | [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | `smear-cursor.lua` | カーソル移動のスムーズアニメーション（smoothプリセット） | — |
 | [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) | `zen-mode.lua` | 集中モード（中央寄せ・余計なUI非表示） | `<leader>z` トグル, `:ZenMode` |
 | [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) | `ufo.lua` | 高機能な折りたたみ（LSP foldingRange 優先・treesitter/indent フォールバック） | `zR` 全展開, `zM` 全折りたたみ, `za` トグル |
+| [blink.cmp](https://github.com/Saghen/blink.cmp) | `blink.lua` | LSP/snippet/buffer/path 補完エンジン（既存LSPと連携） | `<C-space>` 補完表示, `<C-y>` 確定, `<C-n>/<C-p>` 選択, `<C-e>` 閉じる, `<Tab>` snippet移動 |

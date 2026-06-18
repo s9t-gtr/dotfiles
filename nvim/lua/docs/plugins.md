@@ -34,3 +34,11 @@
 - **補足**: `lua/plugins/lsp.lua` で全LSPクライアントに `foldingRange` capability を付与している
 - **インストール日**: 2026-06-18
 - **URL**: https://github.com/kevinhwang91/nvim-ufo
+
+### saghen/blink.cmp
+**目的**: 補完エンジン（LSP・snippets・buffer・path ソース、既存の nvim-lspconfig と連携）
+- **関連ファイル**: `lua/plugins/blink.lua`
+- **依存関係**: `rafamadriz/friendly-snippets`
+- **補足**: `lua/plugins/lsp.lua` で `blink.cmp.get_lsp_capabilities()` を用いて補完 capability を全クライアントへ付与（YouCompleteMe の代替として採用）
+- **インストール日**: 2026-06-18
+- **URL**: https://github.com/Saghen/blink.cmp
