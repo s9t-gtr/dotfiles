@@ -5,7 +5,9 @@ return {
   init = function()
     -- ufo は foldmethod を手動に切り替えるため、大きい値を設定して
     -- 起動時に折りたたみが閉じないようにする
-    vim.o.foldcolumn = "1"
+    -- foldcolumn は gitsigns の差分サインと gutter が競合するため無効化
+    -- (折りたたみは za/zR/zM で操作可能)
+    vim.o.foldcolumn = "0"
     vim.o.foldlevel = 99
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
