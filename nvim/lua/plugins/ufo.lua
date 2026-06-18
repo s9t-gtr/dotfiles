@@ -10,19 +10,38 @@ return {
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
   end,
-  opts = {
-    -- LSP の foldingRange を優先し、未対応バッファは treesitter でフォールバック
-    -- (provider_selector は {main, fallback} の2つまでしか返せない)
-    provider_selector = function(_, _, _)
-      return { "lsp", "treesitter" }
-    end,
-  },
-  config = function(_, opts)
-    require("ufo").setup(opts)
+  config = function()
+    local ufo = require("ufo")
+
+    -- LSP → treesitter → indent の3段フォールバック。
+    -- provider_selector のテーブル形式は {main, fallback} の2つまでなので、
+    -- 3段にするには UfoFallbackException を自前で catch する関数を返す。
+    local function selector(bufnr)
+      local function handleFallback(err, providerName)
+        if type(err) == "string" and err:match("UfoFallbackException") then
+          return ufo.getFolds(bufnr, providerName)
+        end
+        return require("promise").reject(err)
+      end
+
+      return ufo.getFolds(bufnr, "lsp")
+        :catch(function(err)
+          return handleFallback(err, "treesitter")
+        end)
+        :catch(function(err)
+          return handleFallback(err, "indent")
+        end)
+    end
+
+    ufo.setup({
+      provider_selector = function(_, _, _)
+        return selector
+      end,
+    })
 
     -- zR/zM は foldlevel を変更するが、ufo の API は foldlevel を保持したまま
     -- 全展開/全折りたたみを行う
-    vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
-    vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
+    vim.keymap.set("n", "zR", ufo.openAllFolds, { desc = "Open all folds" })
+    vim.keymap.set("n", "zM", ufo.closeAllFolds, { desc = "Close all folds" })
   end,
 }
