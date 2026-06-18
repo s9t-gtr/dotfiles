@@ -42,3 +42,11 @@
 - **補足**: `lua/plugins/lsp.lua` で `blink.cmp.get_lsp_capabilities()` を用いて補完 capability を全クライアントへ付与（YouCompleteMe の代替として採用）
 - **インストール日**: 2026-06-18
 - **URL**: https://github.com/Saghen/blink.cmp
+
+### nvim-neo-tree/neo-tree.nvim
+**目的**: ファイルツリーエクスプローラ（v3.x ブランチ）
+- **関連ファイル**: `lua/plugins/neo-tree.lua`
+- **依存関係**: `nvim-lua/plenary.nvim`, `MunifTanjim/nui.nvim`, `nvim-tree/nvim-web-devicons`
+- **補足**: `<leader>e` でトグル。`Neotree` コマンドでも起動可能
+- **インストール日**: 2026-06-18
+- **URL**: https://github.com/nvim-neo-tree/neo-tree.nvim

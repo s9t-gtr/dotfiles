@@ -15,3 +15,4 @@
 | [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) | `zen-mode.lua` | 集中モード（中央寄せ・余計なUI非表示） | `<leader>z` トグル, `:ZenMode` |
 | [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) | `ufo.lua` | 高機能な折りたたみ（LSP foldingRange 優先・treesitter/indent フォールバック） | `zR` 全展開, `zM` 全折りたたみ, `za` トグル |
 | [blink.cmp](https://github.com/Saghen/blink.cmp) | `blink.lua` | LSP/snippet/buffer/path 補完エンジン（既存LSPと連携） | `<C-space>` 補完表示, `<C-y>` 確定, `<C-n>/<C-p>` 選択, `<C-e>` 閉じる, `<Tab>` snippet移動 |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | `neo-tree.lua` | ファイルツリーエクスプローラ（v3.x） | `<leader>e` トグル, ツリー内: `<cr>` 開く, `a` 追加, `d` 削除, `r` リネーム, `?` ヘルプ |
