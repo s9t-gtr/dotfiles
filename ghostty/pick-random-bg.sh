@@ -8,8 +8,9 @@ IMAGES_DIR="$HOME/dotfiles/ghostty/images"
 OUTPUT="$HOME/.config/ghostty/background.conf"
 mkdir -p "$(dirname "$OUTPUT")"
 
+# 画像はモード別サブディレクトリ（coding/ review/ …）にも置かれるため再帰的に探す
 chosen=$(
-  find "$IMAGES_DIR" -maxdepth 1 -type f \
+  find "$IMAGES_DIR" -type f \
     \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null \
   | awk 'BEGIN{srand()} {a[NR]=$0} END{if(NR>0)print a[int(rand()*NR)+1]}'
 )

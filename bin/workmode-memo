@@ -1,0 +1,28 @@
+#!/bin/sh
+# workmode-memo: モード切替前に「ready-to-resume メモ」を1行書き留めるヘルパ。
+# tmux display-popup 内で実行される。切替直前の旧タスクの「どこまで/次の一手」を
+# 残すと注意残余が減り次タスクの成績が上がる（Leroy & Glomb 2018）。
+#
+# usage: workmode-memo <prev_mode> <next_mode>
+# メモは既存の日次メモ（prefix+m と同じ Obsidian ファイル）に追記する。
+
+PREV="${1:-?}"
+NEXT="${2:-?}"
+
+MEMO_DIR="$HOME/Obsidian/MEMO"
+MEMO_FILE="$MEMO_DIR/$(date +%Y-%m-%d).md"
+
+clear 2>/dev/null || true
+printf '\n'
+printf '   [%s → %s] への切替メモ\n' "$PREV" "$NEXT"
+printf '   %s を再開するとき最初にやる一手は？（空Enterでスキップ）\n' "$PREV"
+printf '\n   > '
+read -r note 2>/dev/null || note=""
+
+if [ -n "$note" ]; then
+  mkdir -p "$MEMO_DIR"
+  # 時刻つきで日次メモに追記（既存の prefix+m メモと同じファイル）
+  printf -- '- `%s` [resume:%s] %s\n' "$(date +%H:%M)" "$PREV" "$note" >> "$MEMO_FILE"
+  printf '\n   記録しました。\n'
+  sleep 1 2>/dev/null || true
+fi

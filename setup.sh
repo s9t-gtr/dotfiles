@@ -13,7 +13,9 @@ ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" ~/.tmux.conf
 # ghostty
 mkdir -p ~/.config/ghostty
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
-"$DOTFILES_DIR/ghostty/pick-random-bg.sh"
+
+# work mode: 前回モード（なければ coding）で背景・状態を初期化
+"$DOTFILES_DIR/bin/workmode" "$(cat ~/.config/workmode 2>/dev/null || echo coding)"
 
 # lazygit
 mkdir -p ~/Library/Application\ Support/lazygit
