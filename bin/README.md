@@ -1,6 +1,6 @@
 # workmode — 作業モード別テーマ切替
 
-作業・業務の種類ごとに tmux のアクセント色と Ghostty の背景をまとめて切り替える。
+作業・業務の種類ごとに tmux・Ghostty・nvim のアクセント色と背景をまとめて切り替える。
 
 ## 狙い（なぜ効くのか）
 
@@ -45,12 +45,23 @@ tmux からは `prefix + W`（= `Ctrl-j W`）でメニュー選択。
 
 ## 構成
 
-- `bin/workmode` — 本体。状態ファイル → tmux → Ghostty の順に伝播
+- `bin/workmode` — 本体。状態ファイル → tmux → Ghostty → nvim の順に伝播
 - `bin/workmode-break` — break 時の休憩ガイド（popup 内で実行）
 - `bin/workmode-memo` — resume メモ入力（popup 内で実行、日次メモに追記）
 - `tmux/modes/*.conf` — モード別のアクセント色定義（5枚）
 - `ghostty/images/<mode>/` — モード別背景画像
+- `nvim/lua/config/workmode.lua` — nvim 側のアクセント連携（後述）
 - `~/.config/workmode` — 現在モードの状態ファイル（自動生成）
+
+## nvim 連携
+
+colorscheme（gruber-darker）自体は変えない。`CursorLineNr` / `StatusLine` /
+`WinSeparator` の3箇所だけ、tmux/modes/*.conf と同じアクセント色に揃える
+（総入れ替えはシンタックスハイライトへの慣れを壊すため、識別に必要な最小限に絞る）。
+
+- 起動時（`VimEnter`）と `ColorScheme` イベントで `~/.config/workmode` を読んで適用
+- `workmode` から `pkill -USR1 nvim` を送ると、起動済みの全 nvim インスタンスが
+  `Signal` autocmd で即座に追従する（tmux 内の複数 pane も一括で揃う）
 
 ## 技術メモ
 
@@ -58,3 +69,5 @@ tmux からは `prefix + W`（= `Ctrl-j W`）でメニュー選択。
 - 画像リロードが既存サーフェスに即反映されない場合の保険として OSC 11 で背景色を即時変更
   （tmux の `allow-passthrough on` 経由）。
 - 同一モードの再指定は no-op（起動時復元の二重適用を防ぐ冪等ガード）。
+- nvim・Ghostty へのシグナルはコマンド名を固定して `pkill -USR1/-USR2 -x <name>` で送り、
+  無関係なプロセスへの誤送を避けている。

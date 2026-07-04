@@ -126,6 +126,11 @@ chosen=$(
 # コマンドを固定し、他プロセスへの誤送を避ける
 pkill -USR2 -x ghostty 2>/dev/null || true
 
+# nvim にもモード変更を通知（~/dotfiles/nvim/lua/config/workmode.lua が
+# SIGUSR1 を受けて CursorLineNr 等のアクセント色だけ更新する。colorscheme
+# 自体は変えない）。同一ユーザーの全 nvim インスタンスに送る
+pkill -USR1 -x nvim 2>/dev/null || true
+
 # --- (5) OSC 11 で背景色を即時反映（画像リロードが即効かない場合の保険）------
 # 各 tmux クライアントの tty に直接送る。tmux 外なら現在の端末へ。
 osc="$(printf '\033]11;#%s\033\\' "$TINT")"
