@@ -48,16 +48,18 @@ return {
     vim.lsp.enable({ "clangd", "lua_ls", "intelephense", "gopls" })
 
     vim.diagnostic.config({
-      virtual_text = {
-        prefix = "●",
-        source = "if_many",
-        spacing = 2,
-      },
+      -- 行末のインライン表示は長い行で右に見切れるため無効化し、
+      -- カーソル行の診断はコード下に折り返し表示（virtual_lines）する
+      virtual_text = false,
+      virtual_lines = { current_line = true },
       severity_sort = true,
       float = {
         border = "rounded",
         source = "if_many",
       },
     })
+
+    -- カーソル行の診断を枠付きフロートで全文表示（折り返し・スクロール可）
+    vim.keymap.set("n", "<leader>l", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
   end,
 }
