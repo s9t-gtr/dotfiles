@@ -88,10 +88,24 @@ fi
 
 # --- (0) 切替前に resume メモ（-m 指定時のみ、オプトイン）--------------------
 # 前タスクの「どこまで/次の一手」を1行残すと注意残余が減る (Leroy & Glomb 2018)
+#
+# tmux display-popup は非同期（呼び出し元はポップアップを開いた時点で即座に
+# 制御を取り戻す）。そのため何もせず後続の (1)-(7) に進むと、ユーザーが
+# ポップアップにまだ打鍵している最中に tmux source-file（全ペイン再描画）や
+# OSC11 の直接 tty 書き込みが割り込み、日次メモが文字化けする不具合があった。
+# workmode-memo が入力完了時に作る DONE_FLAG を待ってから後続処理へ進む。
 if [ "$MEMO" = "1" ] && [ -n "$PREV" ] && command -v tmux >/dev/null 2>&1; then
+  DONE_FLAG="$(mktemp -t workmode-memo-done 2>/dev/null || echo "/tmp/workmode-memo-done.$$")"
+  rm -f "$DONE_FLAG"
   tmux display-popup -w 80% -h 40% \
     -s "bg=#181818,fg=#e4e4ef" -S "fg=#ffdd33" \
-    -E "$DOTFILES/bin/workmode-memo '$PREV' '$MODE'" 2>/dev/null || true
+    -E "$DOTFILES/bin/workmode-memo '$PREV' '$MODE' '$DONE_FLAG'" 2>/dev/null || true
+  i=0
+  while [ ! -f "$DONE_FLAG" ] && [ "$i" -lt 600 ]; do
+    sleep 0.1
+    i=$((i + 1))
+  done
+  rm -f "$DONE_FLAG"
 fi
 
 # --- (1) 状態の永続化 -------------------------------------------------------
