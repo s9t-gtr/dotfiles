@@ -12,6 +12,11 @@ NEXT="${2:-?}"
 MEMO_DIR="$HOME/Obsidian/MEMO"
 MEMO_FILE="$MEMO_DIR/$(date +%Y-%m-%d).md"
 
+# tmux display-popup は画面表示とキー入力転送の確立の間にわずかなラグがあり、
+# 表示直後に打鍵すると先頭〜途中の入力が欠落する（日本語入力の途中バイトが
+# 消え、日次メモが文字化けする不具合の原因だった）。転送確立を待つための猶予。
+sleep 0.3 2>/dev/null || true
+
 clear 2>/dev/null || true
 printf '\n'
 printf '   [%s → %s] への切替メモ\n' "$PREV" "$NEXT"
