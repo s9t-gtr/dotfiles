@@ -4,6 +4,7 @@
 |--------|------|-------------|-------------|
 | [gruber-darker.nvim](https://github.com/blazkowolf/gruber-darker.nvim) | `gruber-darker.lua` | カラースキーム | — |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | `treesitter.lua` | シンタックスハイライト・インデント（masterブランチ、Neovim 0.11.x向け） | — |
+| [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | `treesitter-context.lua` | カーソルがいる関数・クラス等のコンテキストを画面上部に固定表示 | — |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | `telescope.lua` | ファジーファインダー（ファイル検索・grep・バッファ切替） | `<leader>ff` ファイル検索, `<leader>fg` grep, `<leader>fb` バッファ, `<leader>fh` ヘルプ |
 | [flash.nvim](https://github.com/folke/flash.nvim) | `flash.lua` | ラベルジャンプによる高速カーソル移動 | `s` ジャンプ, `S` Treesitter選択, `r` リモート, `R` Treesitter検索, `<C-s>` トグル |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | `gitsigns.lua` | Gitの変更箇所をサイン列に表示 | — |
