@@ -18,6 +18,9 @@ ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 mkdir -p ~/Library/Application\ Support/lazygit
 ln -sf "$DOTFILES_DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/config.yml
 
+# zsh (powerlevel10k)
+ln -sf "$DOTFILES_DIR/zsh/.p10k.zsh" ~/.p10k.zsh
+
 # tpm (tmux plugin manager)
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
