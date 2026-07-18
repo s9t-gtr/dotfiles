@@ -1,12 +1,15 @@
 keybind = ¥=text:\\
 
 window-inherit-working-directory = true
-theme = Gruber Darker
+theme = Flexoki Light
 font-size = 16
 font-family = "HackGen Console NF"
 cursor-opacity = 0.7
 macos-option-as-alt = true
 
 config-file = ?~/.config/ghostty/background.conf
+
+custom-shader = /Users/kota_suzuki/dotfiles/ghostty/shaders/dither.glsl
+custom-shader-animation = false
 
 command = sh -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux'
