@@ -14,9 +14,6 @@ ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" ~/.tmux.conf
 mkdir -p ~/.config/ghostty
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 
-# work mode: 前回モード（なければ coding）で背景・状態を初期化
-"$DOTFILES_DIR/bin/workmode" "$(cat ~/.config/workmode 2>/dev/null || echo coding)"
-
 # lazygit
 mkdir -p ~/Library/Application\ Support/lazygit
 ln -sf "$DOTFILES_DIR/lazygit/config.yml" ~/Library/Application\ Support/lazygit/config.yml

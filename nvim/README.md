@@ -2,7 +2,7 @@
 
 | Plugin | File | Description | Key Bindings |
 |--------|------|-------------|-------------|
-| [gruber-darker.nvim](https://github.com/blazkowolf/gruber-darker.nvim) | `gruber-darker.lua` | カラースキーム | — |
+| [flexoki-neovim](https://github.com/kepano/flexoki-neovim) | `flexoki.lua` | カラースキーム（flexoki-light、紙の本のような配色） | — |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | `treesitter.lua` | シンタックスハイライト・インデント（masterブランチ、Neovim 0.11.x向け） | — |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | `treesitter-context.lua` | カーソルがいる関数・クラス等のコンテキストを画面上部に固定表示 | — |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | `telescope.lua` | ファジーファインダー（ファイル検索・grep・バッファ切替） | `<leader>ff` ファイル検索, `<leader>fg` grep, `<leader>fb` バッファ, `<leader>fh` ヘルプ |
@@ -12,7 +12,6 @@
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | `render-markdown.lua` | Markdownをバッファ内でリッチに描画 | — |
 | [sidekick.nvim](https://github.com/folke/sidekick.nvim) | `sidekick.lua` | シンボルアウトラインのサイドパネル | — |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | `lsp.lua` | LSP設定（定義ジャンプ・参照一覧・リネーム等） | `gd` 定義, `gr` 参照, `<leader>ds` シンボル, `<leader>ca` コードアクション, `<leader>rn` リネーム, `K` ホバー, `<leader>l` 診断フロート表示 |
-| [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | `smear-cursor.lua` | カーソル移動のスムーズアニメーション（smoothプリセット） | — |
 | [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) | `zen-mode.lua` | 集中モード（中央寄せ・余計なUI非表示） | `<leader>z` トグル, `:ZenMode` |
 | [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) | `ufo.lua` | 高機能な折りたたみ（LSP foldingRange 優先・treesitter/indent フォールバック） | `zR` 全展開, `zM` 全折りたたみ, `za` トグル |
 | [blink.cmp](https://github.com/Saghen/blink.cmp) | `blink.lua` | LSP/snippet/buffer/path 補完エンジン（既存LSPと連携） | `<C-space>` 補完表示, `<C-y>` 確定, `<C-n>/<C-p>` 選択, `<C-e>` 閉じる, `<Tab>` snippet移動 |
