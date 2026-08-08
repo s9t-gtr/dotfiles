@@ -21,9 +21,7 @@ float getBayerFromPacked(int x, int y) {
 #define LEVELS 5.0 // Available color steps per channel
 #define INV_LEVELS (1.0 / LEVELS)
 
-// 1px = 1 Bayer セルだと粒が細かすぎるので、DOT_SCALE px をまとめて
-// 1セル分の閾値として扱い、粒を大きく見せる
-#define DOT_SCALE 3.0
+#define DOT_SCALE 1.0
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
