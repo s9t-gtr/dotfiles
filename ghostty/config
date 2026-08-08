@@ -2,11 +2,13 @@ keybind = ¥=text:\\
 
 window-inherit-working-directory = true
 theme = Flexoki Light
+background = fffcf0
 font-size = 16
 font-family = "HackGen Console NF"
 cursor-opacity = 0.7
 macos-option-as-alt = true
 
+# 端末ローカルの生成ファイル（pick-random-bg.shが書く。無くてもエラーにならない）
 config-file = ?~/.config/ghostty/background.conf
 
 custom-shader = ~/dotfiles/ghostty/shaders/cursor_brush.glsl

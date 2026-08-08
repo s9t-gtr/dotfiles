@@ -20,7 +20,6 @@ chosen=$(
 
 if [ -n "$chosen" ]; then
   cat > "$OUTPUT" <<EOF
-background = fffcf0
 background-image = $chosen
 background-image-position = center
 background-image-fit = contain
