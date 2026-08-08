@@ -34,10 +34,14 @@ esac
 
 mkdir -p "$(dirname "$OUTPUT")"
 
+# awkの引数なしsrand()は秒単位の時刻シードで、macOSのawkは近い時刻から
+# ほぼ同じ乱数列を作るため、実行のたびに同じ画像ばかり選ばれてしまう。
+# /dev/urandomからシードを取って毎回独立に選ぶ。
+seed=$(od -An -N4 -tu4 /dev/urandom | tr -d ' ')
 chosen=$(
   find "$IMAGES_DIR" -type f \
     \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null \
-  | awk 'BEGIN{srand()} {a[NR]=$0} END{if(NR>0)print a[int(rand()*NR)+1]}'
+  | awk -v seed="$seed" 'BEGIN{srand(seed)} {a[NR]=$0} END{if(NR>0)print a[int(rand()*NR)+1]}'
 )
 
 if [ -n "$chosen" ]; then
