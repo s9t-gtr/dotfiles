@@ -2,7 +2,7 @@
 
 | Plugin | File | Description | Key Bindings |
 |--------|------|-------------|-------------|
-| [flexoki-neovim](https://github.com/kepano/flexoki-neovim) | `flexoki.lua` | カラースキーム（flexoki-light、紙の本のような配色） | — |
+| [night-owl.nvim](https://github.com/oxfist/night-owl.nvim) | `night-owl.lua` | カラースキーム（night-owl、深夜の紺青配色。Ghostty蛍テーマと同系色・背景透過） | — |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | `treesitter.lua` | シンタックスハイライト・インデント（masterブランチ、Neovim 0.11.x向け） | — |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | `treesitter-context.lua` | カーソルがいる関数・クラス等のコンテキストを画面上部に固定表示 | — |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | `telescope.lua` | ファジーファインダー（ファイル検索・grep・バッファ切替） | `<leader>ff` ファイル検索, `<leader>fg` grep, `<leader>fb` バッファ, `<leader>fh` ヘルプ |
