@@ -14,7 +14,7 @@
 # shift the flat background afterwards.
 #
 # Usage: uv run ghostty/tint-bg-images.py [SRC_DIR] [DST_DIR]
-#   SRC_DIR defaults to ~/dotfiles/ghostty/images/test
+#   SRC_DIR defaults to ~/dotfiles/ghostty/images/ink_painting
 #   DST_DIR defaults to <SRC_DIR>-tinted
 # Already-tinted files are skipped unless the source is newer, so
 # re-running after adding new images only converts the additions.
@@ -73,7 +73,7 @@ def tint(src: Path, dst: Path) -> None:
 
 def main() -> None:
     src_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else (
-        Path.home() / "dotfiles/ghostty/images/test"
+        Path.home() / "dotfiles/ghostty/images/ink_painting"
     )
     dst_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else (
         src_dir.parent / f"{src_dir.name}-tinted"

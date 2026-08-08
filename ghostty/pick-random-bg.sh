@@ -1,13 +1,14 @@
 #!/bin/sh
-# Picks a random image from ~/dotfiles/ghostty/images/test-tinted and
-# writes a ghostty background config snippet for the next ghostty launch.
-# The tinted dir is generated from images/test by tint-bg-images.py
-# (multiply-blend with the Flexoki paper color); after adding new images
-# to images/test, run: uv run ~/dotfiles/ghostty/tint-bg-images.py
+# Picks a random image from ~/dotfiles/ghostty/images/ink_painting-tinted
+# and writes a ghostty background config snippet for the next ghostty
+# launch. The tinted dir is generated from images/ink_painting by
+# tint-bg-images.py (background color remapped to the Flexoki paper
+# color); after adding new images to images/ink_painting, run:
+#   uv run ~/dotfiles/ghostty/tint-bg-images.py
 
 set -e
 
-IMAGES_DIR="$HOME/dotfiles/ghostty/images/test-tinted"
+IMAGES_DIR="$HOME/dotfiles/ghostty/images/ink_painting-tinted"
 OUTPUT="$HOME/.config/ghostty/background.conf"
 mkdir -p "$(dirname "$OUTPUT")"
 
