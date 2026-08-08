@@ -9,7 +9,8 @@ macos-option-as-alt = true
 
 config-file = ?~/.config/ghostty/background.conf
 
+custom-shader = ~/dotfiles/ghostty/shaders/cursor_brush.glsl
 custom-shader = ~/dotfiles/ghostty/shaders/dither.glsl
-custom-shader-animation = false
+custom-shader-animation = true
 
 command = sh -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux'
