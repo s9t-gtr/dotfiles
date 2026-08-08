@@ -1,18 +1,19 @@
 keybind = ¥=text:\\
 
 window-inherit-working-directory = true
-theme = Flexoki Light
-background = fffcf0
+theme = Night Owl
+background = 011627
 font-size = 16
 font-family = "HackGen Console NF"
 cursor-opacity = 0.7
+# 蛍と同じ光色(Night Owlパレットの黄緑)
+cursor-color = addb67
 macos-option-as-alt = true
 
 # 端末ローカルの生成ファイル（pick-random-bg.shが書く。無くてもエラーにならない）
 config-file = ?~/.config/ghostty/background.conf
 
-custom-shader = ~/dotfiles/ghostty/shaders/cursor_brush.glsl
-custom-shader = ~/dotfiles/ghostty/shaders/dither.glsl
+custom-shader = ~/dotfiles/ghostty/shaders/cursor_firefly.glsl
 custom-shader-animation = true
 
 command = sh -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux'
