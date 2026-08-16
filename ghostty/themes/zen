@@ -1,0 +1,37 @@
+# zen — 静寂。白磁の背景に水色(青系)のアクセント。
+# 日本の伝統色ベース: 白磁 #f8fafb / 藍鼠(墨) #3f5666 / 浅葱 #3a97ac
+# 縹 #4a7fa5 / 瓶覗 #dceef4 / 白群 #55b0c4
+
+background = #f8fafb
+foreground = #3f5666
+
+cursor-color = #3a97ac
+cursor-text = #f8fafb
+
+selection-background = #cfe7f0
+selection-foreground = #2e4152
+
+# 0: 藍鼠(dark) / 8: 薄藍鼠(CLIの薄文字用。薄すぎると読めないので3:1強を確保)
+palette = 0=#46606f
+palette = 8=#7d94a2
+# 1/9: 蘇芳(muted red)
+palette = 1=#b25d5d
+palette = 9=#c47272
+# 2/10: 青磁(muted green)
+palette = 2=#5f9982
+palette = 10=#6fae94
+# 3/11: 芥子(muted amber)
+palette = 3=#9c823a
+palette = 11=#b09a4d
+# 4/12: 縹(blue)
+palette = 4=#4a7fa5
+palette = 12=#5b93c4
+# 5/13: 藤(muted violet)
+palette = 5=#8677ad
+palette = 13=#9b8cc4
+# 6/14: 浅葱/白群(cyan)
+palette = 6=#3a97ac
+palette = 14=#55b0c4
+# 7/15: 水明かりの白
+palette = 7=#c2d4dc
+palette = 15=#eef4f7
